@@ -1,0 +1,59 @@
+{
+    "operationStatus": true,
+    "code": "00",
+    "message": "OK",
+    "userMessage": null,
+    "result": [
+        {
+            "username": null,
+            "role": null,
+            "numPage": 0,
+            "sizePage": 0,
+            "id": "3001",
+            "description": null,
+            "statusElement": "ACTIVO",
+            "idCatalog": "MOTIVO_RECHAZO",
+            "idElement": 4001,
+            "nombre": "Motivo A",
+            "descriptionElement": null,
+            "valAlphanumOne": "VAL13",
+            "valNumberOne": 130,
+            "valAlphanumTwo": "VAL14",
+            "valNumberTwo": 140
+        },
+        {
+            "username": null,
+            "role": null,
+            "numPage": 0,
+            "sizePage": 0,
+            "id": "3002",
+            "description": null,
+            "statusElement": "INACTIVO",
+            "idCatalog": "MOTIVO_RECHAZO",
+            "idElement": 4002,
+            "nombre": "Motivo B",
+            "descriptionElement": null,
+            "valAlphanumOne": "VAL15",
+            "valNumberOne": 150,
+            "valAlphanumTwo": "VAL16",
+            "valNumberTwo": 160
+        },
+        {
+            "username": null,
+            "role": null,
+            "numPage": 0,
+            "sizePage": 0,
+            "id": "3003",
+            "description": null,
+            "statusElement": "ACTIVO",
+            "idCatalog": "MOTIVO_RECHAZO",
+            "idElement": 4003,
+            "nombre": "Motivo C",
+            "descriptionElement": null,
+            "valAlphanumOne": "VAL17",
+            "valNumberOne": 170,
+            "valAlphanumTwo": "VAL18",
+            "valNumberTwo": 180
+        }
+    ]
+}

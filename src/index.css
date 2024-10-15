@@ -1,0 +1,7 @@
+:root{
+    --blue_main:#007abc
+}
+
+.bg-secondary-blue{
+    background-color: var(--blue_main);
+}

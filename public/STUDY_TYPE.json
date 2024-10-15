@@ -1,0 +1,59 @@
+{
+    "operationStatus": true,
+    "code": "00",
+    "message": "OK",
+    "userMessage": null,
+    "result": [
+        {
+            "username": null,
+            "role": null,
+            "numPage": 0,
+            "sizePage": 0,
+            "id": "2001",
+            "description": null,
+            "statusElement": "ACTIVO",
+            "idCatalog": "STUDY_TYPE",
+            "idElement": 3001,
+            "nombre": "Tipo de Estudio A",
+            "descriptionElement": null,
+            "valAlphanumOne": "VAL7",
+            "valNumberOne": 70,
+            "valAlphanumTwo": "VAL8",
+            "valNumberTwo": 80
+        },
+        {
+            "username": null,
+            "role": null,
+            "numPage": 0,
+            "sizePage": 0,
+            "id": "2002",
+            "description": null,
+            "statusElement": "INACTIVO",
+            "idCatalog": "STUDY_TYPE",
+            "idElement": 3002,
+            "nombre": "Tipo de Estudio B",
+            "descriptionElement": null,
+            "valAlphanumOne": "VAL9",
+            "valNumberOne": 90,
+            "valAlphanumTwo": "VAL10",
+            "valNumberTwo": 100
+        },
+        {
+            "username": null,
+            "role": null,
+            "numPage": 0,
+            "sizePage": 0,
+            "id": "2003",
+            "description": null,
+            "statusElement": "ACTIVO",
+            "idCatalog": "STUDY_TYPE",
+            "idElement": 3003,
+            "nombre": "Tipo de Estudio C",
+            "descriptionElement": null,
+            "valAlphanumOne": "VAL11",
+            "valNumberOne": 110,
+            "valAlphanumTwo": "VAL12",
+            "valNumberTwo": 120
+        }
+    ]
+}

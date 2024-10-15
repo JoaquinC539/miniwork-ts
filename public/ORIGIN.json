@@ -1,0 +1,59 @@
+{
+    "operationStatus": true,
+    "code": "00",
+    "message": "OK",
+    "userMessage": null,
+    "result": [
+        {
+            "username": null,
+            "role": null,
+            "numPage": 0,
+            "sizePage": 0,
+            "id": "1001",
+            "description": null,
+            "statusElement": "ACTIVO",
+            "idCatalog": "ORIGIN",
+            "idElement": 2001,
+            "nombre": "Origen A",
+            "descriptionElement": null,
+            "valAlphanumOne": "VAL1",
+            "valNumberOne": 10,
+            "valAlphanumTwo": "VAL2",
+            "valNumberTwo": 20
+        },
+        {
+            "username": null,
+            "role": null,
+            "numPage": 0,
+            "sizePage": 0,
+            "id": "1002",
+            "description": null,
+            "statusElement": "INACTIVO",
+            "idCatalog": "ORIGIN",
+            "idElement": 2002,
+            "nombre": "Origen B",
+            "descriptionElement": null,
+            "valAlphanumOne": "VAL3",
+            "valNumberOne": 30,
+            "valAlphanumTwo": "VAL4",
+            "valNumberTwo": 40
+        },        
+        {
+            "username": null,
+            "role": null,
+            "numPage": 0,
+            "sizePage": 0,
+            "id": "1003",
+            "description": null,
+            "statusElement": "ACTIVO",
+            "idCatalog": "ORIGIN",
+            "idElement": 2003,
+            "nombre": "Origen C",
+            "descriptionElement": null,
+            "valAlphanumOne": "VAL5",
+            "valNumberOne": 50,
+            "valAlphanumTwo": "VAL6",
+            "valNumberTwo": 60
+        }
+    ]
+}
