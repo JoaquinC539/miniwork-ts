@@ -1,4 +1,4 @@
-import { Button, FormControl, FormControlLabel, InputLabel, MenuItem, Radio, RadioGroup, Select, SxProps, TextField } from "@mui/material";
+import { Alert, Button, FormControl, FormControlLabel, IconButton, InputLabel, MenuItem, Radio, RadioGroup, Select, SxProps, TextField } from "@mui/material";
 import { ChangeEvent, FC, FormEvent, useState } from "react";
 // import { AdapterDateFns} from '@mui/x-date-pickers/AdapterDateFns'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
@@ -7,13 +7,15 @@ import dayjs, { Dayjs } from "dayjs";
 import { SearchFormData } from "../interfaces/pages/busqueda/FormData";
 import { useNavigate } from "react-router-dom";
 import ScreenLoader from "../loader/ScreenLoader";
+import CloseIcon from "@mui/icons-material/Close"
 import axios from "axios";
 // import { DatePicker } from "@mui/x-date-pickers";
 
 const Busqueda: FC = () => {
 
-    const navigate=useNavigate();
-    const [dataLoading,setDataLoading]=useState<boolean>(false);
+    const navigate = useNavigate();
+    const [dataLoading, setDataLoading] = useState<boolean>(false);
+    const [searchDataOk, setSearchDataOk] = useState<boolean>(true);
 
     const cleanButtonSX: SxProps = {
         border: 1,
@@ -36,9 +38,9 @@ const Busqueda: FC = () => {
             padding: '8px',
         }
     }
-    const initialSearchValues:SearchFormData={
-        bussinessType:"all",
-        requestStatus:"all"
+    const initialSearchValues: SearchFormData = {
+        bussinessType: "all",
+        requestStatus: "all"
     }
     const [searchValues, setSearchValues] = useState<SearchFormData>(initialSearchValues)
 
@@ -47,19 +49,23 @@ const Busqueda: FC = () => {
         console.log("form submit", searchValues)
         setDataLoading(true)
         try {
-            const res=await axios.get("/bandejaE.json")
-            const data=res.data
-            if (data && data.length > 0) {                
+            const res = await axios.get("/bandejaE.json")
+            // let data = res.data
+            // data = [];
+            const data = res.data
+            
+            if (data && data.length > 0) {
                 navigate("/busquedaresultados", { state: { searchResults: data } });
-            } else {                
-                navigate("/busquedaresultados", { state: { searchResults: [] } });
+            } else {
+                // navigate("/busquedaresultados", { state: { searchResults: [] } });
+                setSearchDataOk(false);
             }
         } catch (error) {
             console.error("Error fetching search results:", error);
-        }finally{
+        } finally {
             setDataLoading(false);
         }
-        
+
     }
 
     const handleClean = () => {
@@ -96,10 +102,33 @@ const Busqueda: FC = () => {
         }
     }
 
+    const handleCloseSearchDataOk=()=>{
+        setSearchDataOk(true);
+    }
+
 
     return (
         <div className="container-fluid">
-            <div className="d-flex p-2 justify-content-center">
+            <div className="d-flex p-2 justify-content-center flex-column">
+                {!searchDataOk && (
+                    <div className="w-100 ">
+                        <div className="row m-2">
+                            <div className="col-12">
+                                <Alert variant="filled" severity="info"
+                                action={
+                                    <IconButton
+                                    color="inherit"
+                                    size="small"
+                                    onClick={handleCloseSearchDataOk}>
+                                        <CloseIcon fontSize="inherit" />
+                                    </IconButton>
+                                }>
+                                    No results
+                                </Alert>
+                            </div>
+                        </div>
+                    </div>
+                )}
                 <div className="card w-100">
                     <form onSubmit={handleSubmit}>
                         <div className="card-body">
@@ -218,7 +247,7 @@ const Busqueda: FC = () => {
                                                                         name="ownerFatherSurname"
                                                                         margin="dense"
                                                                         label="Apellido Paterno"
-                                                                        value={searchValues['ownerFatherSurname'] || "" }
+                                                                        value={searchValues['ownerFatherSurname'] || ""}
                                                                         onChange={handleChange}
                                                                     />
                                                                 </div>
@@ -233,7 +262,7 @@ const Busqueda: FC = () => {
                                                                         name="ownerMotherSurname"
                                                                         margin="dense"
                                                                         label="Apellido Materno"
-                                                                        value={searchValues["ownerMotherSurname"] ||""}
+                                                                        value={searchValues["ownerMotherSurname"] || ""}
                                                                         onChange={handleChange}
 
                                                                     />
@@ -301,7 +330,7 @@ const Busqueda: FC = () => {
                                                                                 onChange={(newDate: Dayjs | null) => handleDateChange(newDate, 'assureStartBirthDate')}
                                                                                 format="DD/MM/YYYY"
                                                                                 sx={inputsTextSX}
-                                                                                value={searchValues['assureStartBirthDate'] ? dayjs(searchValues['assureStartBirthDate']):null}
+                                                                                value={searchValues['assureStartBirthDate'] ? dayjs(searchValues['assureStartBirthDate']) : null}
                                                                             />
                                                                         </LocalizationProvider>
 
@@ -317,7 +346,7 @@ const Busqueda: FC = () => {
                                                                                 onChange={(newDate: Dayjs | null) => handleDateChange(newDate, 'assureEndBirthDate')}
                                                                                 format="DD/MM/YYYY"
                                                                                 sx={inputsTextSX}
-                                                                                value={searchValues["assureEndBirthDate"] ? dayjs(searchValues['assureEndBirthDate']):null}
+                                                                                value={searchValues["assureEndBirthDate"] ? dayjs(searchValues['assureEndBirthDate']) : null}
                                                                             />
                                                                         </LocalizationProvider>
                                                                     </div>
@@ -390,7 +419,7 @@ const Busqueda: FC = () => {
                                                                                 onChange={(newDate: Dayjs | null) => handleDateChange(newDate, 'requestEndDate')}
                                                                                 format="DD/MM/YYYY"
                                                                                 sx={inputsTextSX}
-                                                                                value={searchValues['requestEndDate'] ? dayjs(searchValues['requestEndDate']):null}
+                                                                                value={searchValues['requestEndDate'] ? dayjs(searchValues['requestEndDate']) : null}
                                                                             />
                                                                         </LocalizationProvider>
                                                                     </div>
@@ -420,7 +449,7 @@ const Busqueda: FC = () => {
                 </div>
             </div>
 
-            <ScreenLoader loading={dataLoading}/>
+            <ScreenLoader loading={dataLoading} />
         </div>
     )
 }

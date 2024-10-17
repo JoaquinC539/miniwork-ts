@@ -1,0 +1,13 @@
+{
+    "user": "CarrizalesMacuixtleJ",
+    "role": "GMA",
+    "srcApp": "manualUnderwritingWeb",
+    "idCatalog": 14,
+    "catalogMaster": {
+        "id": 14,
+        "name": "BUSSINES_RULE",
+        "description": "Sub Rubroo",
+        "vigency": 1,
+        "editableUsr": 1
+    }
+}

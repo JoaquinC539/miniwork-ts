@@ -12,6 +12,8 @@ import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { ModalFormField } from "../types/ModalFormField";
 import EditFormModal from "../modals/EditFormModal";
 import EmptyFormModal from "../modals/EmptyFormModal";
+import { CatalogMasterUpdate } from "../interfaces/pages/catalogGeneral/CatalogMasterUpdate";
+import { NewCatalogPayload } from "../interfaces/pages/catalogGeneral/newCatalogPayload";
 const GeneralCatalog: FC = () => {
 
     const [catalogMaster, setCatalogMaster] = useState<Partial<CatalogoMaster[]>>([]);
@@ -19,7 +21,7 @@ const GeneralCatalog: FC = () => {
     const [selectedValue, setSelectedValue] = useState<string>("");
     const [catalogData, setCatalogData] = useState<CatalogData[]>([]);
     const [originalCatalogData, setOriginalCatalogData] = useState<CatalogData[]>([])
-    const [selectedValueJson, setSelectedValueJson] = useState({});
+    const [selectedValueJson, setSelectedValueJson] = useState<{ [key: string]: string | number | boolean} >({});
 
     const fetchMasterCatalog = async () => {
         try {
@@ -62,8 +64,13 @@ const GeneralCatalog: FC = () => {
     useEffect(() => {
         if (selectedValue !== "") {
             setdataLoading(true);
-            const selectedJson = catalogMaster.find((object) => object?.name === selectedValue)
-            setSelectedValueJson({ 'description': selectedJson?.description })
+            const selectedJson: CatalogoMaster|undefined = catalogMaster.find((object) => object?.name === selectedValue)
+            if(selectedJson!==undefined){
+                // setSelectedValueJson(selectedJson)
+                setSelectedValueJson({ 'description': selectedJson?.description })
+            }
+            
+            
             setTimeout(() => {
                 fetchCatalogData(selectedValue);
             }, 500)
@@ -129,7 +136,21 @@ const GeneralCatalog: FC = () => {
         setEditCategorieModalOpen(true);
     }
     const handleEditCategorieModalSubmit = (formData: { [key: string]: string | number | boolean }) => {
-        console.log(formData);
+        const catalogMasterFind:CatalogoMaster|undefined=catalogMaster.find((ctlg)=>ctlg?.name===selectedValue)        
+        if(catalogMasterFind!==undefined){
+            catalogMasterFind.description=formData["description"] as string
+            const payload:CatalogMasterUpdate={
+                user: 'defaultUser',
+                role: 'defaultRole', 
+                srcApp: 'defaultSrcApp',
+                idCatalog: catalogMasterFind.id,
+                catalogMaster:catalogMasterFind
+            }
+            //TODO: Implement send of the payload to service            
+            // setdataLoading(true);
+            console.log(payload)
+        }
+        
     }
 
     //Modal Edit Catalogo
@@ -154,8 +175,10 @@ const GeneralCatalog: FC = () => {
         setEditCatalogModalOpen(true);
 
     }
-    const handleEditCatalogModalSubmit = (formData: { [key: string]: string | number | boolean }) => {
+    const handleEditCatalogModalSubmit = (formData: { [key: string]: string | number | boolean }) => {        
         console.log(formData);
+        
+        //TODO send formdata to the service
 
     }
 
@@ -170,7 +193,19 @@ const GeneralCatalog: FC = () => {
         setCreateCatalogModalOpen(true);
     }
     const handleCreateCatalogModalSubmit = (formData: { [key: string]: string | number | boolean }) => {
-        console.log(formData);
+        const catalogMasterFind:CatalogoMaster|undefined=catalogMaster.find((ctlg)=>ctlg?.name===selectedValue)
+        if(catalogMasterFind!==undefined){
+            const newCatalog: NewCatalogPayload={
+                username: 'defaultUser',
+                role:"defaultRole",
+                idCatalog:catalogMasterFind.id.toString(),
+                nombre:formData['nombre'] as string    
+            }
+            console.log(newCatalog)
+            //TODO: implement send of the create to service
+            // setdataLoading(true);
+            
+        }
     }
 
 

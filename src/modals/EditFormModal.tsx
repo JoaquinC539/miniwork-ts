@@ -12,7 +12,8 @@ const EditFormModal: FC<EditFormModalProps> = ({
     onSubmit,
     formTitle
 }) => {
-    const [formValues, setFormValues] = useState<{ [key: string]: string | number | boolean }>(editValues);
+
+    const [formValues, setFormValues] = useState(editValues);
 
     useEffect(() => {
         if (editValues) {
@@ -30,7 +31,6 @@ const EditFormModal: FC<EditFormModalProps> = ({
     }
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        console.log("submit edit modal")
         e.preventDefault();
         onSubmit(formValues);
         onClose();
