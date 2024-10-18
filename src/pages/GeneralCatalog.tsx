@@ -13,7 +13,7 @@ import { ModalFormField } from "../types/ModalFormField";
 import EditFormModal from "../modals/EditFormModal";
 import EmptyFormModal from "../modals/EmptyFormModal";
 import { CatalogMasterUpdate } from "../interfaces/pages/catalogGeneral/CatalogMasterUpdate";
-import { NewCatalogPayload } from "../interfaces/pages/catalogGeneral/newCatalogPayload";
+import { NewCatalogPayload } from "../interfaces/pages/catalogGeneral/NewCatalogPayload";
 const GeneralCatalog: FC = () => {
 
     const [catalogMaster, setCatalogMaster] = useState<Partial<CatalogoMaster[]>>([]);

@@ -1,4 +1,4 @@
 export interface BaseSection{
-    type:'text'|'table'
+    type:'text'|'table' | 'collapsibleTable'
     title:string;
 }

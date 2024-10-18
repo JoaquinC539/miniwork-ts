@@ -1,0 +1,817 @@
+[
+    {
+        "poliza": "TRJ303",
+        "folioCtrl": "202410110KSWE1213240",
+        "promotoria": null,
+        "tipoMovimiento": "Nuevo Negocio",
+        "zona": "09B",
+        "usuarioSubscripcion": "N3583171",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "11-10-2024",
+        "usuarioLiberacion": "PenalozaSalgadoI",
+        "estatus": "Solicitud Emitida",
+        "dictamen": "Aceptada",
+        "nombreTitular": "EDGAR PEREZ MARCELINO",
+        "rfc": "PEME000101LT2",
+        "primaActual": "1,518.35",
+        "primaMovimiento": "1,518.35",
+        "nuevaPrima": "1,518.35",
+        "nuevaPrimaAnualizada": "18,220.20",
+        "totalPrimas": "290,388.23",
+        "numSolicitud": "149241011111146",
+        "inforcePolicy": [
+            {
+                "key": "TRJ270",
+                "value": "243,965.03"
+            },
+            {
+                "key": "TRJ268",
+                "value": "3,965.04"
+            },
+            {
+                "key": "TRJ272",
+                "value": "24,237.96"
+            }
+        ]
+    },
+    {
+        "poliza": "TRJ303",
+        "folioCtrl": "202410110KSWC1649434",
+        "promotoria": null,
+        "tipoMovimiento": "Inclusión",
+        "zona": "09B",
+        "usuarioSubscripcion": "N3583171",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "11-10-2024",
+        "usuarioLiberacion": null,
+        "estatus": "Pendiente de RevisiÃ³n en MUW",
+        "dictamen": null,
+        "nombreTitular": "EDGAR PEREZ MARCELINO",
+        "rfc": "PEME000101LT2",
+        "primaActual": "1,518.35",
+        "primaMovimiento": "6.22",
+        "nuevaPrima": "1,524.57",
+        "nuevaPrimaAnualizada": "18,294.84",
+        "totalPrimas": "290,462.87",
+        "numSolicitud": "178241011154454",
+        "inforcePolicy": [
+            {
+                "key": "TRJ268",
+                "value": "3,965.04"
+            },
+            {
+                "key": "TRJ272",
+                "value": "24,237.96"
+            },
+            {
+                "key": "TRJ270",
+                "value": "243,965.03"
+            }
+        ]
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202407240GVWC5121831",
+        "promotoria": null,
+        "tipoMovimiento": "Inclusión",
+        "zona": "24A",
+        "usuarioSubscripcion": null,
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "",
+        "usuarioLiberacion": null,
+        "estatus": null,
+        "dictamen": null,
+        "nombreTitular": "XXXXX XXXXX XXXXX",
+        "rfc": "XXXX461228000",
+        "primaActual": ".00",
+        "primaMovimiento": ".00",
+        "nuevaPrima": ".00",
+        "nuevaPrimaAnualizada": ".00",
+        "totalPrimas": "162,208.08",
+        "numSolicitud": null,
+        "inforcePolicy": [
+            {
+                "key": "T53688",
+                "value": "61,309.56"
+            },
+            {
+                "key": "X51668",
+                "value": "100,898.52"
+            }
+        ]
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202407250GVMI1827164",
+        "promotoria": null,
+        "tipoMovimiento": "Incremento",
+        "zona": "24B",
+        "usuarioSubscripcion": null,
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "",
+        "usuarioLiberacion": null,
+        "estatus": null,
+        "dictamen": null,
+        "nombreTitular": "XXXXX XXXXX XXXXX",
+        "rfc": "XXXX590903000",
+        "primaActual": ".00",
+        "primaMovimiento": ".00",
+        "nuevaPrima": ".00",
+        "nuevaPrimaAnualizada": ".00",
+        "totalPrimas": "167,967.97",
+        "numSolicitud": null,
+        "inforcePolicy": [
+            {
+                "key": "N86428",
+                "value": "167,967.97"
+            }
+        ]
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202407250KFMC1645381",
+        "promotoria": null,
+        "tipoMovimiento": "Inclusión",
+        "zona": "15A",
+        "usuarioSubscripcion": null,
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "",
+        "usuarioLiberacion": null,
+        "estatus": null,
+        "dictamen": null,
+        "nombreTitular": "XXXXX XXXXX XXXXX",
+        "rfc": "XXXX680815M64",
+        "primaActual": ".00",
+        "primaMovimiento": ".00",
+        "nuevaPrima": ".00",
+        "nuevaPrimaAnualizada": ".00",
+        "totalPrimas": "151,473.36",
+        "numSolicitud": null,
+        "inforcePolicy": [
+            {
+                "key": "RWA069",
+                "value": "28,432.44"
+            },
+            {
+                "key": "NA5640",
+                "value": "123,040.92"
+            }
+        ]
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202407260KSWC1755671",
+        "promotoria": null,
+        "tipoMovimiento": "Inclusión",
+        "zona": "09A",
+        "usuarioSubscripcion": null,
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "",
+        "usuarioLiberacion": null,
+        "estatus": null,
+        "dictamen": null,
+        "nombreTitular": "XXXXX XXXXX XXXXX",
+        "rfc": "XXXX350704H62",
+        "primaActual": ".00",
+        "primaMovimiento": ".00",
+        "nuevaPrima": ".00",
+        "nuevaPrimaAnualizada": ".00",
+        "totalPrimas": "129,914.41",
+        "numSolicitud": null,
+        "inforcePolicy": [
+            {
+                "key": "XX7431",
+                "value": "129,914.41"
+            }
+        ]
+    },
+    {
+        "poliza": "TRJ201",
+        "folioCtrl": "202410100KSWC1934484",
+        "promotoria": null,
+        "tipoMovimiento": "Inclusión",
+        "zona": "09B",
+        "usuarioSubscripcion": "N3583171",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "10-10-2024",
+        "usuarioLiberacion": null,
+        "estatus": "Pendiente de RevisiÃ³n en MUW",
+        "dictamen": null,
+        "nombreTitular": "LUCYT STONE VOLKSTYCHOR",
+        "rfc": "SOVL800711DH6",
+        "primaActual": "82,093.79",
+        "primaMovimiento": "5.89",
+        "nuevaPrima": "82,099.68",
+        "nuevaPrimaAnualizada": "985,196.18",
+        "totalPrimas": "985,196.18",
+        "numSolicitud": "238241010182926",
+        "inforcePolicy": []
+    },
+    {
+        "poliza": "TRJ272",
+        "folioCtrl": "202410110KSWE1135776",
+        "promotoria": null,
+        "tipoMovimiento": "Nuevo Negocio",
+        "zona": "09B",
+        "usuarioSubscripcion": "N3583171",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "11-10-2024",
+        "usuarioLiberacion": "PenalozaSalgadoI",
+        "estatus": "Solicitud Emitida",
+        "dictamen": "Aceptada",
+        "nombreTitular": "EDGAR PEREZ MARCELINO",
+        "rfc": "PEME000101LT2",
+        "primaActual": "2,019.83",
+        "primaMovimiento": "2,019.83",
+        "nuevaPrima": "2,019.83",
+        "nuevaPrimaAnualizada": "24,237.96",
+        "totalPrimas": "272,168.04",
+        "numSolicitud": "144241011103127",
+        "inforcePolicy": [
+            {
+                "key": "TRJ268",
+                "value": "3,965.04"
+            },
+            {
+                "key": "TRJ270",
+                "value": "243,965.03"
+            }
+        ]
+    },
+    {
+        "poliza": "TRJ201",
+        "folioCtrl": "202410100KSWE1611678",
+        "promotoria": null,
+        "tipoMovimiento": "Nuevo Negocio",
+        "zona": "09A",
+        "usuarioSubscripcion": "N3583171",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "10-10-2024",
+        "usuarioLiberacion": "PenalozaSalgadoI",
+        "estatus": "Solicitud Emitida",
+        "dictamen": "Aceptada",
+        "nombreTitular": "LUCYT STONE VOLKSTYCHOR",
+        "rfc": "SOVL800711DH6",
+        "primaActual": "82,093.79",
+        "primaMovimiento": "82,093.79",
+        "nuevaPrima": "82,093.79",
+        "nuevaPrimaAnualizada": "985,125.48",
+        "totalPrimas": "985,125.48",
+        "numSolicitud": "213241010150704",
+        "inforcePolicy": []
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202410160KFWE1803819",
+        "promotoria": null,
+        "tipoMovimiento": "Nuevo Negocio",
+        "zona": "15A",
+        "usuarioSubscripcion": "N3250232",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "10-10-2024",
+        "usuarioLiberacion": null,
+        "estatus": "Pendiente de RevisiÃ³n en MUW",
+        "dictamen": null,
+        "nombreTitular": "VILMA METOY MEMBREÑO",
+        "rfc": "MEMV910721CD9",
+        "primaActual": "12,757.29",
+        "primaMovimiento": "12,757.29",
+        "nuevaPrima": "12,757.29",
+        "nuevaPrimaAnualizada": "153,087.48",
+        "totalPrimas": "153,087.48",
+        "numSolicitud": "181241010144357",
+        "inforcePolicy": []
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202410170KSWE1354242",
+        "promotoria": null,
+        "tipoMovimiento": "Nuevo Negocio",
+        "zona": "09A",
+        "usuarioSubscripcion": "N3336398",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "08-10-2024",
+        "usuarioLiberacion": null,
+        "estatus": "Pendiente de RevisiÃ³n en MUW",
+        "dictamen": null,
+        "nombreTitular": "ESTEBAN MONTOYA DE LA ROSA",
+        "rfc": "MORE740202KE6",
+        "primaActual": "50,926.50",
+        "primaMovimiento": "50,926.50",
+        "nuevaPrima": "50,926.50",
+        "nuevaPrimaAnualizada": "611,118.00",
+        "totalPrimas": "611,118.00",
+        "numSolicitud": "165241008130328",
+        "inforcePolicy": []
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202410140KSWE1930195",
+        "promotoria": null,
+        "tipoMovimiento": "Nuevo Negocio",
+        "zona": "09B",
+        "usuarioSubscripcion": "N3583171",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "14-10-2024",
+        "usuarioLiberacion": "PenalozaSalgadoI",
+        "estatus": "Pendiente de Reproceso",
+        "dictamen": "Aceptada",
+        "nombreTitular": "EDGAR PEREZ MARCELINO",
+        "rfc": "PEME000101LT2",
+        "primaActual": "20,019.83",
+        "primaMovimiento": "20,019.83",
+        "nuevaPrima": "20,019.83",
+        "nuevaPrimaAnualizada": "240,237.96",
+        "totalPrimas": "512,405.99",
+        "numSolicitud": "105241014182659",
+        "inforcePolicy": [
+            {
+                "key": "TRJ270",
+                "value": "243,965.03"
+            },
+            {
+                "key": "TRJ272",
+                "value": "24,237.96"
+            },
+            {
+                "key": "TRJ268",
+                "value": "3,965.04"
+            }
+        ]
+    },
+    {
+        "poliza": "TRJ457",
+        "folioCtrl": "202410140KSWE1935594",
+        "promotoria": null,
+        "tipoMovimiento": "Nuevo Negocio",
+        "zona": "09B",
+        "usuarioSubscripcion": "N3583171",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "14-10-2024",
+        "usuarioLiberacion": "PenalozaSalgadoI",
+        "estatus": "Solicitud Emitida",
+        "dictamen": "Aceptada",
+        "nombreTitular": "EDGAR PEREZ MARCELINO",
+        "rfc": "PEME000101LT2",
+        "primaActual": "534.36",
+        "primaMovimiento": "534.36",
+        "nuevaPrima": "534.36",
+        "nuevaPrimaAnualizada": "6,412.32",
+        "totalPrimas": "278,580.35",
+        "numSolicitud": "100241014183330",
+        "inforcePolicy": [
+            {
+                "key": "TRJ270",
+                "value": "243,965.03"
+            },
+            {
+                "key": "TRJ268",
+                "value": "3,965.04"
+            },
+            {
+                "key": "TRJ272",
+                "value": "24,237.96"
+            }
+        ]
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202410150KSWE1248465",
+        "promotoria": null,
+        "tipoMovimiento": "Nuevo Negocio",
+        "zona": "09B",
+        "usuarioSubscripcion": "N3583171",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "15-10-2024",
+        "usuarioLiberacion": null,
+        "estatus": "Pendiente de RevisiÃ³n en MUW",
+        "dictamen": null,
+        "nombreTitular": "EDGAR PEREZ MARCELINO",
+        "rfc": "PEME000101LT2",
+        "primaActual": "7,019.83",
+        "primaMovimiento": "7,019.83",
+        "nuevaPrima": "7,019.83",
+        "nuevaPrimaAnualizada": "84,237.96",
+        "totalPrimas": "362,818.30",
+        "numSolicitud": "175241015114606",
+        "inforcePolicy": [
+            {
+                "key": "TRJ270",
+                "value": "243,965.03"
+            },
+            {
+                "key": "TRJ457",
+                "value": "6,412.32"
+            },
+            {
+                "key": "TRJ268",
+                "value": "3,965.04"
+            },
+            {
+                "key": "TRJ272",
+                "value": "24,237.96"
+            }
+        ]
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202410150KSWE1259775",
+        "promotoria": null,
+        "tipoMovimiento": "Nuevo Negocio",
+        "zona": "09B",
+        "usuarioSubscripcion": "N3583171",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "15-10-2024",
+        "usuarioLiberacion": "PenalozaSalgadoI",
+        "estatus": "Pendiente de Reproceso",
+        "dictamen": "Aceptada",
+        "nombreTitular": "EDGAR PEREZ MARCELINO",
+        "rfc": "PEME000101LT2",
+        "primaActual": "19.83",
+        "primaMovimiento": "19.83",
+        "nuevaPrima": "19.83",
+        "nuevaPrimaAnualizada": "237.96",
+        "totalPrimas": "278,818.30",
+        "numSolicitud": "178241015115833",
+        "inforcePolicy": [
+            {
+                "key": "TRJ457",
+                "value": "6,412.32"
+            },
+            {
+                "key": "TRJ270",
+                "value": "243,965.03"
+            },
+            {
+                "key": "TRJ272",
+                "value": "24,237.96"
+            },
+            {
+                "key": "TRJ268",
+                "value": "3,965.04"
+            }
+        ]
+    },
+    {
+        "poliza": "TRJ515",
+        "folioCtrl": "202410150KSWE1655029",
+        "promotoria": null,
+        "tipoMovimiento": "Nuevo Negocio",
+        "zona": "09B",
+        "usuarioSubscripcion": "N3583171",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "15-10-2024",
+        "usuarioLiberacion": "PenalozaSalgadoI",
+        "estatus": "Solicitud Emitida",
+        "dictamen": "Aceptada",
+        "nombreTitular": "EDGAR PEREZ MARCELINO",
+        "rfc": "PEME000101LT2",
+        "primaActual": "19.83",
+        "primaMovimiento": "19.83",
+        "nuevaPrima": "19.83",
+        "nuevaPrimaAnualizada": "237.96",
+        "totalPrimas": "278,818.30",
+        "numSolicitud": "201241015155452",
+        "inforcePolicy": [
+            {
+                "key": "TRJ457",
+                "value": "6,412.32"
+            },
+            {
+                "key": "TRJ270",
+                "value": "243,965.03"
+            },
+            {
+                "key": "TRJ272",
+                "value": "24,237.96"
+            },
+            {
+                "key": "TRJ268",
+                "value": "3,965.04"
+            }
+        ]
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202410150KSWE1659077",
+        "promotoria": null,
+        "tipoMovimiento": "Nuevo Negocio",
+        "zona": "09B",
+        "usuarioSubscripcion": "N3583171",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "15-10-2024",
+        "usuarioLiberacion": "PenalozaSalgadoI",
+        "estatus": "Pendiente de Reproceso",
+        "dictamen": "Aceptada",
+        "nombreTitular": "EDGAR PEREZ MARCELINO",
+        "rfc": "PEME000101LT2",
+        "primaActual": "18.35",
+        "primaMovimiento": "18.35",
+        "nuevaPrima": "18.35",
+        "nuevaPrimaAnualizada": "220.20",
+        "totalPrimas": "278,800.54",
+        "numSolicitud": "209241015155728",
+        "inforcePolicy": [
+            {
+                "key": "TRJ272",
+                "value": "24,237.96"
+            },
+            {
+                "key": "TRJ457",
+                "value": "6,412.32"
+            },
+            {
+                "key": "TRJ270",
+                "value": "243,965.03"
+            },
+            {
+                "key": "TRJ268",
+                "value": "3,965.04"
+            }
+        ]
+    },
+    {
+        "poliza": "TRJ583",
+        "folioCtrl": "202410160KSWE1202540",
+        "promotoria": null,
+        "tipoMovimiento": "Nuevo Negocio",
+        "zona": "09B",
+        "usuarioSubscripcion": "N3583171",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "16-10-2024",
+        "usuarioLiberacion": "PenalozaSalgadoI",
+        "estatus": "Solicitud Emitida",
+        "dictamen": "Aceptada",
+        "nombreTitular": "EDGAR PEREZ MARCELINO",
+        "rfc": "PEME000101LT2",
+        "primaActual": "2,019.83",
+        "primaMovimiento": "2,019.83",
+        "nuevaPrima": "2,019.83",
+        "nuevaPrimaAnualizada": "24,237.96",
+        "totalPrimas": "303,056.27",
+        "numSolicitud": "263241016110116",
+        "inforcePolicy": [
+            {
+                "key": "TRJ272",
+                "value": "24,237.96"
+            },
+            {
+                "key": "TRJ268",
+                "value": "3,965.04"
+            },
+            {
+                "key": "TRJ457",
+                "value": "6,412.32"
+            },
+            {
+                "key": "TRJ270",
+                "value": "243,965.03"
+            },
+            {
+                "key": "TRJ515",
+                "value": "237.96"
+            }
+        ]
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202407220JQMI2244467",
+        "promotoria": null,
+        "tipoMovimiento": "Incremento",
+        "zona": "09A",
+        "usuarioSubscripcion": null,
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "",
+        "usuarioLiberacion": null,
+        "estatus": null,
+        "dictamen": null,
+        "nombreTitular": "XXXXX XXXXX XXXXX",
+        "rfc": "XXXX560123UK3",
+        "primaActual": ".00",
+        "primaMovimiento": ".00",
+        "nuevaPrima": ".00",
+        "nuevaPrimaAnualizada": ".00",
+        "totalPrimas": "125,830.56",
+        "numSolicitud": null,
+        "inforcePolicy": [
+            {
+                "key": "FVP425",
+                "value": "125,830.56"
+            }
+        ]
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202407220KCWC2838213",
+        "promotoria": null,
+        "tipoMovimiento": "Inclusión",
+        "zona": "09A",
+        "usuarioSubscripcion": null,
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "",
+        "usuarioLiberacion": null,
+        "estatus": null,
+        "dictamen": null,
+        "nombreTitular": "XXXXX XXXXX XXXXX",
+        "rfc": "XXXX790123GI1",
+        "primaActual": ".00",
+        "primaMovimiento": ".00",
+        "nuevaPrima": ".00",
+        "nuevaPrimaAnualizada": ".00",
+        "totalPrimas": "125,665.08",
+        "numSolicitud": null,
+        "inforcePolicy": [
+            {
+                "key": "EWT846",
+                "value": "62,847.12"
+            },
+            {
+                "key": "MYF614",
+                "value": "62,817.96"
+            }
+        ]
+    },
+    {
+        "poliza": "TRJ270",
+        "folioCtrl": "202410110KSWE1105237",
+        "promotoria": null,
+        "tipoMovimiento": "Nuevo Negocio",
+        "zona": "09B",
+        "usuarioSubscripcion": "N3583171",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "11-10-2024",
+        "usuarioLiberacion": "PenalozaSalgadoI",
+        "estatus": "Solicitud Emitida",
+        "dictamen": "Aceptada",
+        "nombreTitular": "EDGAR PEREZ MARCELINO",
+        "rfc": "PEME000101LT2",
+        "primaActual": "20,330.42",
+        "primaMovimiento": "20,330.42",
+        "nuevaPrima": "20,330.42",
+        "nuevaPrimaAnualizada": "243,965.04",
+        "totalPrimas": "247,930.08",
+        "numSolicitud": "143241011100338",
+        "inforcePolicy": [
+            {
+                "key": "TRJ268",
+                "value": "3,965.04"
+            }
+        ]
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202407230KCMC2132162",
+        "promotoria": null,
+        "tipoMovimiento": "Inclusión",
+        "zona": "12B",
+        "usuarioSubscripcion": null,
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "",
+        "usuarioLiberacion": null,
+        "estatus": null,
+        "dictamen": null,
+        "nombreTitular": "XXXXX XXXXX XXXXX",
+        "rfc": "XXXX521012000",
+        "primaActual": ".00",
+        "primaMovimiento": ".00",
+        "nuevaPrima": ".00",
+        "nuevaPrimaAnualizada": ".00",
+        "totalPrimas": "133,402.80",
+        "numSolicitud": null,
+        "inforcePolicy": [
+            {
+                "key": "JT9605",
+                "value": "66,544.44"
+            },
+            {
+                "key": "LXP144",
+                "value": "66,858.36"
+            }
+        ]
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202410140KSWE1326956",
+        "promotoria": null,
+        "tipoMovimiento": "Nuevo Negocio",
+        "zona": "09A",
+        "usuarioSubscripcion": "3408546",
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "14-10-2024",
+        "usuarioLiberacion": null,
+        "estatus": "Pendiente de RevisiÃ³n en MUW",
+        "dictamen": null,
+        "nombreTitular": "LUCYT CHUYAS VOLKSTYCHOR",
+        "rfc": "CUVL800711Q12",
+        "primaActual": "81,171.64",
+        "primaMovimiento": "81,171.64",
+        "nuevaPrima": "81,171.64",
+        "nuevaPrimaAnualizada": "974,059.68",
+        "totalPrimas": "974,059.68",
+        "numSolicitud": "158241014122005",
+        "inforcePolicy": []
+    },
+    {
+        "poliza": null,
+        "folioCtrl": "202407240GVWI5606924",
+        "promotoria": null,
+        "tipoMovimiento": "Incremento",
+        "zona": "24A",
+        "usuarioSubscripcion": null,
+        "fechaSuscripcion": "",
+        "tipoSuscripcion": "Suscripcion Manual",
+        "importeTotal": "",
+        "desglose": null,
+        "fechaSolicitud": "",
+        "usuarioLiberacion": null,
+        "estatus": null,
+        "dictamen": null,
+        "nombreTitular": "XXXXX XXXXX XXXXX",
+        "rfc": "XXXX461228000",
+        "primaActual": ".00",
+        "primaMovimiento": ".00",
+        "nuevaPrima": ".00",
+        "nuevaPrimaAnualizada": ".00",
+        "totalPrimas": "162,208.08",
+        "numSolicitud": null,
+        "inforcePolicy": [
+            {
+                "key": "X51668",
+                "value": "100,898.52"
+            },
+            {
+                "key": "T53688",
+                "value": "61,309.56"
+            }
+        ]
+    }
+]

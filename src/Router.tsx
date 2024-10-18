@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import GeneralCatalog from './pages/GeneralCatalog';
 import Busqueda from './pages/Busqueda';
 import BusquedaResultados from './pages/BusquedaResultados';
+import TestGeneral from './pages/TestGeneral';
 
 export const Router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ export const Router = createBrowserRouter([
       {
         path:'busquedaResultados',
         element:<BusquedaResultados />
+      },
+      {
+        path:"reporte",
+        element:<TestGeneral/>
       }
     ],
   },

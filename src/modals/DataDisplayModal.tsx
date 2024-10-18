@@ -4,6 +4,7 @@ import { SectionData } from "../types/SectionData";
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import { TextSection } from "../interfaces/modals/TextSection";
 import { TableSection } from "../interfaces/modals/TableSection";
+import { renderCollapsableTableSection } from "./renderCollapsableTableSection";
 
 const DataDisplayModal: FC<DataDisplayModalProps> = ({ isOpen, onClose, data = [], modalTitle = "Title" }) => {
     const [displayData, setDisplayData] = useState<SectionData[]>(data);
@@ -64,6 +65,7 @@ const DataDisplayModal: FC<DataDisplayModalProps> = ({ isOpen, onClose, data = [
         )
     }
 
+    
 
 
     return (
@@ -76,6 +78,7 @@ const DataDisplayModal: FC<DataDisplayModalProps> = ({ isOpen, onClose, data = [
                             <Typography variant="h6" gutterBottom>{section.title}</Typography>
                             {section.type==='text' && renderTextSection(section)}
                             {section.type==='table' && renderTableSection(section)}
+                            {section.type==="collapsibleTable" && renderCollapsableTableSection(section)}
                         </Box>
                     ))
                 ) :
@@ -90,41 +93,6 @@ const DataDisplayModal: FC<DataDisplayModalProps> = ({ isOpen, onClose, data = [
             </DialogActions>
         </Dialog>
     )
-
-    // return (
-    //     <Dialog open={isOpen} onClose={onClose} fullWidth maxWidth="md">
-    //         <DialogTitle>{modalTitle}</DialogTitle>
-    //         <DialogContent>
-    //             {displayData && displayData.length > 0 ? (
-    //                 displayData.map((section, index) => (
-    //                     <Box key={index} mb={3} p={2} border={1} borderRadius={2} borderColor={"blue.300"}>
-    //                         {/* Section Title */}
-    //                         <Typography variant="h6" gutterBottom>{section.title}</Typography>
-
-    //                         {/* Section Body */}
-    //                         {typeof section.data === 'object' ? (
-    //                             Object.keys(section.data).map((key, index) => (
-    //                                 <Typography key={index} variant="body1">
-    //                                     <strong>{key}: </strong>
-    //                                     {(section.data as { [key: string]: string | number })[key]}
-    //                                 </Typography>
-    //                             ))
-    //                         ) : (
-    //                             <Typography variant="body1">
-    //                                 <strong>{section.title}: </strong> {section.data}
-    //                             </Typography>
-    //                         )}
-    //                     </Box>
-    //                 ))
-    //             ) : (
-    //                 <Typography variant="body1">No hay información</Typography>
-    //             )}
-    //         </DialogContent>
-    //         <DialogActions>
-    //             <Button onClick={onClose}>Cerrar</Button>
-    //         </DialogActions>
-    //     </Dialog>
-    // );
 
 }
 export default DataDisplayModal;

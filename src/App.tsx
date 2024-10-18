@@ -24,6 +24,9 @@ const App: FC = () => {
           <li>
             <Link to={'busquedaResultados'}>Busqueda Resultados</Link>
           </li>
+          <li>
+            <Link to={'reporte'}>Test General</Link>
+          </li>
         </ul>
       </nav>
       <div>

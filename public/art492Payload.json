@@ -1,0 +1,24 @@
+[
+    {
+        "username": "CarrizalesMacuixtleJ",
+        "role": "GMA",
+        "sizePage": null,
+        "numPage": null,
+        "search": "3",
+        "origin": "ManualUnderwritingArt",
+        "typeDateSearch": "suscriptionDt",
+        "dteOfAppAfter": "2024-10-01T06:00:00.000Z",
+        "dteOfAppBefore": "2024-10-17T06:00:00.000Z"
+    },
+    {
+        "username": "CarrizalesMacuixtleJ",
+        "role": "GMA",
+        "sizePage": null,
+        "numPage": null,
+        "search": "3",
+        "origin": "ManualUnderwritingArt",
+        "typeDateSearch": "modificationDt",
+        "dteOfAppAfter": "2024-10-01T06:00:00.000Z",
+        "dteOfAppBefore": "2024-10-17T06:00:00.000Z"
+    }
+]
