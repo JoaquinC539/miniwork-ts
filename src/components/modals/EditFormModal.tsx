@@ -1,18 +1,25 @@
-import { ChangeEvent, FC, FormEvent, useState } from "react";
-import { EmptyFormModalProps } from "../interfaces/modals/EmptyFormModalProps";
+import { ChangeEvent, FC, FormEvent, useEffect, useState } from "react";
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
-import { SelectFormField } from "../interfaces/modals/SelectFormField";
-import { ModalFormField } from "../types/ModalFormField";
-
-
-const EmptyFormModal: FC<EmptyFormModalProps> = ({
+import { SelectFormField } from "../../interfaces/modals/SelectFormField";
+import { ModalFormField } from "../../types/ModalFormField";
+import { EditFormModalProps } from "../../interfaces/modals/EditFormModalProps";
+import Grid from '@mui/material/Grid2'
+const EditFormModal: FC<EditFormModalProps> = ({
     isOpen,
     onClose,
-    formFields = [],
+    formFields,
+    editValues,
     onSubmit,
-    formTitle,
+    formTitle
 }) => {
-    const [formValues, setFormValues] = useState<{ [key: string]: string | number | boolean }>({});
+
+    const [formValues, setFormValues] = useState(editValues);
+
+    useEffect(() => {
+        if (editValues) {
+            setFormValues(editValues);
+        }
+    }, [editValues])
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -22,13 +29,12 @@ const EmptyFormModal: FC<EmptyFormModalProps> = ({
     const handleSelectChange = (e: ChangeEvent<{ value: unknown }>, name: string) => {
         setFormValues((prevValues) => ({ ...prevValues, [name]: e.target.value as string }));
     }
+
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (onSubmit) {
-            onSubmit(formValues);
-        }
+        onSubmit(formValues);
         onClose();
-    }
+    };
 
     const isSelectField = (field: ModalFormField): field is SelectFormField => {
         return field.type === "select"
@@ -39,10 +45,9 @@ const EmptyFormModal: FC<EmptyFormModalProps> = ({
             <DialogTitle>{formTitle}</DialogTitle>
             <DialogContent>
                 <form onSubmit={handleSubmit}>
-                    {formFields.map((field, index) => (
-                        <div key={index} className="mb-2 row">
-                            <div className="col-12">
-                                {/* Handle select fields */}
+                    {formFields.map((field, index) => (                        
+                        <Grid key={index} container mb={2} spacing={2}>
+                            <Grid size={{ xs: 12 }}>
                                 {isSelectField(field) ? (
                                     <FormControl fullWidth margin="dense">
                                         <InputLabel>{field.label}</InputLabel>
@@ -69,8 +74,8 @@ const EmptyFormModal: FC<EmptyFormModalProps> = ({
                                         margin="dense"
                                     />
                                 )}
-                            </div>
-                        </div>
+                            </Grid>
+                        </Grid>
                     ))}
 
                     <DialogActions>
@@ -84,4 +89,6 @@ const EmptyFormModal: FC<EmptyFormModalProps> = ({
         </Dialog>
     );
 }
-export default EmptyFormModal;
+
+
+export default EditFormModal;

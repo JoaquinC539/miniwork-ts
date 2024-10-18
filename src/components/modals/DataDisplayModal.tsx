@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from "react";
-import { DataDisplayModalProps } from "../interfaces/modals/DataDisplayModalProps";
-import { SectionData } from "../types/SectionData";
+import { DataDisplayModalProps } from "../../interfaces/modals/DataDisplayModalProps";
+import { SectionData } from "../../types/SectionData";
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
-import { TextSection } from "../interfaces/modals/TextSection";
-import { TableSection } from "../interfaces/modals/TableSection";
+import { TextSection } from "../../interfaces/modals/TextSection";
+import { TableSection } from "../../interfaces/modals/TableSection";
 import { renderCollapsableTableSection } from "./renderCollapsableTableSection";
 
 const DataDisplayModal: FC<DataDisplayModalProps> = ({ isOpen, onClose, data = [], modalTitle = "Title" }) => {

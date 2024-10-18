@@ -9,7 +9,7 @@ const BusquedaResultados:FC=()=>{
     useEffect(()=>{
         const searchResults=location.state?.searchResults;
         if (!searchResults) {
-            navigate("/busqueda");
+            navigate("/busquedam");
             return;
         }
         if(Array.isArray(searchResults)&& searchResults.length===0){

@@ -27,6 +27,12 @@ const App: FC = () => {
           <li>
             <Link to={'reporte'}>Test General</Link>
           </li>
+          <li>
+            <Link to={'catalogom'}>General Catalog M</Link>
+          </li>
+          <li>
+            <Link to={'busquedam'}>Busquedam</Link>
+          </li>
         </ul>
       </nav>
       <div>

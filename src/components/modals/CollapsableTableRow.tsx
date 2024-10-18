@@ -2,7 +2,7 @@ import { Box, Collapse, IconButton, Table, TableBody, TableCell, TableHead, Tabl
 import { FC, Fragment, useEffect, useState } from "react";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { CollapsableRowData } from "../interfaces/modals/CollapsableRowData";
+import { CollapsableRowData } from "../../interfaces/modals/CollapsableRowData";
 
 
 const CollapsableTableRow: FC<{ row: CollapsableRowData }> = ({ row }) => {

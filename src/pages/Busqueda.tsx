@@ -6,7 +6,7 @@ import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import dayjs, { Dayjs } from "dayjs";
 import { SearchFormData } from "../interfaces/pages/busqueda/FormData";
 import { useNavigate } from "react-router-dom";
-import ScreenLoader from "../loader/ScreenLoader";
+import ScreenLoader from "../components/loader/ScreenLoader";
 import CloseIcon from "@mui/icons-material/Close"
 import axios from "axios";
 // import { DatePicker } from "@mui/x-date-pickers";

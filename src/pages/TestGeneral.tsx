@@ -1,9 +1,12 @@
 import { useState } from "react";
-import DataDisplayModal from "../modals/DataDisplayModal";
+import DataDisplayModal from "../components/modals/DataDisplayModal";
 import { SectionData } from "../types/SectionData";
+import GenericModal from "../components/modals/GenericModal";
+import HomePage from "./HomePage";
 
 const TestGeneral = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isOpenGeneric,setIsOpenGeneric]=useState<boolean>(false);
 
     const handleClickEditModalButton = (): void => {
         setIsOpen(true)
@@ -34,7 +37,9 @@ const TestGeneral = () => {
         
     ];
 
-
+    const handleClickGeneric=()=>{
+        setIsOpenGeneric(true)
+    }
     return (
         <>
             <button onClick={handleClickEditModalButton}>Open Edit</button>
@@ -44,6 +49,13 @@ const TestGeneral = () => {
                 modalTitle="Data test"
                 data={mockCollapsibleTableData}
             />
+            <br />
+            <button onClick={handleClickGeneric}>Open Generic</button>
+            <GenericModal
+            isOpen={isOpenGeneric}
+            onClose={()=>setIsOpenGeneric(false)}
+            modalTitle="Generic Modal Test"
+            children={<HomePage /> }/>
         </>
     );
 }

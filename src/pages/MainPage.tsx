@@ -1,10 +1,10 @@
 import { ChangeEvent, FC, useEffect, useState } from "react";
-import ScreenLoader from "../loader/ScreenLoader";
+import ScreenLoader from "../components/loader/ScreenLoader";
 import { FormControl, InputLabel, MenuItem, Select, Paper } from "@mui/material";
 import axios, { AxiosResponse } from "axios";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import AddIcon from '@mui/icons-material/Add';
-import DataDisplayModal from "../modals/DataDisplayModal";
+import DataDisplayModal from "../components/modals/DataDisplayModal";
 import { SelectOption } from "../interfaces/modals/SelectOption";
 import { SectionData } from "../types/SectionData";
 import { UserData } from "../interfaces/UserData";

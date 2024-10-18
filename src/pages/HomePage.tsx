@@ -1,12 +1,12 @@
 import { FC, useEffect, useState } from "react";
 import axios, { AxiosResponse } from 'axios';
-import ScreenLoader from '../loader/ScreenLoader';
+import ScreenLoader from '../components/loader/ScreenLoader';
 import { Paper } from '@mui/material';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import EditFormModal from '../modals/EditFormModal';
+import EditFormModal from '../components/modals/EditFormModal';
 import AddIcon from '@mui/icons-material/Add';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import EmptyFormModal from '../modals/EmptyFormModal';
+import EmptyFormModal from '../components/modals/EmptyFormModal';
 import { ModalFormField } from "../types/ModalFormField";
 import { UserData } from "../interfaces/UserData";
 

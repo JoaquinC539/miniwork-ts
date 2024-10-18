@@ -1,6 +1,7 @@
-import { ChangeEvent, FC, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import { FormControl, InputLabel, MenuItem, Paper, Select, TextField } from "@mui/material";
+import { Box, Card, CardContent, FormControl, FormGroup, InputLabel, MenuItem, Paper, Select, TextField, Typography } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 import AddIcon from '@mui/icons-material/Add';
 import { CatalogoMaster } from "../interfaces/pages/catalogGeneral/CatalogMaster";
 import axios from "axios";
@@ -14,14 +15,14 @@ import EditFormModal from "../components/modals/EditFormModal";
 import EmptyFormModal from "../components/modals/EmptyFormModal";
 import { CatalogMasterUpdate } from "../interfaces/pages/catalogGeneral/CatalogMasterUpdate";
 import { NewCatalogPayload } from "../interfaces/pages/catalogGeneral/NewCatalogPayload";
-const GeneralCatalog: FC = () => {
 
+const GeneralCatalogM = () => {
     const [catalogMaster, setCatalogMaster] = useState<Partial<CatalogoMaster[]>>([]);
     const [dataLoading, setdataLoading] = useState<boolean>(true);
     const [selectedValue, setSelectedValue] = useState<string>("");
     const [catalogData, setCatalogData] = useState<CatalogData[]>([]);
     const [originalCatalogData, setOriginalCatalogData] = useState<CatalogData[]>([])
-    const [selectedValueJson, setSelectedValueJson] = useState<{ [key: string]: string | number | boolean} >({});
+    const [selectedValueJson, setSelectedValueJson] = useState<{ [key: string]: string | number | boolean }>({});
 
     const fetchMasterCatalog = async () => {
         try {
@@ -64,13 +65,13 @@ const GeneralCatalog: FC = () => {
     useEffect(() => {
         if (selectedValue !== "") {
             setdataLoading(true);
-            const selectedJson: CatalogoMaster|undefined = catalogMaster.find((object) => object?.name === selectedValue)
-            if(selectedJson!==undefined){
+            const selectedJson: CatalogoMaster | undefined = catalogMaster.find((object) => object?.name === selectedValue)
+            if (selectedJson !== undefined) {
                 // setSelectedValueJson(selectedJson)
                 setSelectedValueJson({ 'description': selectedJson?.description })
             }
-            
-            
+
+
             setTimeout(() => {
                 fetchCatalogData(selectedValue);
             }, 500)
@@ -117,7 +118,7 @@ const GeneralCatalog: FC = () => {
         {
             field: 'actions', headerName: 'Editar', flex: 1, sortable: false, headerClassName: 'text-centered', cellClassName: 'text-centered',
             renderCell: (params) => (
-                <a style={{ cursor: 'pointer' }} className="text-center">                    
+                <a style={{ cursor: 'pointer' }} className="text-center">
                     <ModeEditIcon onClick={() => handleClickEditCatalogModal(params.row.id)} />
                 </a>
             )
@@ -136,21 +137,21 @@ const GeneralCatalog: FC = () => {
         setEditCategorieModalOpen(true);
     }
     const handleEditCategorieModalSubmit = (formData: { [key: string]: string | number | boolean }) => {
-        const catalogMasterFind:CatalogoMaster|undefined=catalogMaster.find((ctlg)=>ctlg?.name===selectedValue)        
-        if(catalogMasterFind!==undefined){
-            catalogMasterFind.description=formData["description"] as string
-            const payload:CatalogMasterUpdate={
+        const catalogMasterFind: CatalogoMaster | undefined = catalogMaster.find((ctlg) => ctlg?.name === selectedValue)
+        if (catalogMasterFind !== undefined) {
+            catalogMasterFind.description = formData["description"] as string
+            const payload: CatalogMasterUpdate = {
                 user: 'defaultUser',
-                role: 'defaultRole', 
+                role: 'defaultRole',
                 srcApp: 'defaultSrcApp',
                 idCatalog: catalogMasterFind.id,
-                catalogMaster:catalogMasterFind
+                catalogMaster: catalogMasterFind
             }
             //TODO: Implement send of the payload to service            
             // setdataLoading(true);
             console.log(payload)
         }
-        
+
     }
 
     //Modal Edit Catalogo
@@ -175,9 +176,9 @@ const GeneralCatalog: FC = () => {
         setEditCatalogModalOpen(true);
 
     }
-    const handleEditCatalogModalSubmit = (formData: { [key: string]: string | number | boolean }) => {        
+    const handleEditCatalogModalSubmit = (formData: { [key: string]: string | number | boolean }) => {
         console.log(formData);
-        
+
         //TODO send formdata to the service
 
     }
@@ -193,18 +194,18 @@ const GeneralCatalog: FC = () => {
         setCreateCatalogModalOpen(true);
     }
     const handleCreateCatalogModalSubmit = (formData: { [key: string]: string | number | boolean }) => {
-        const catalogMasterFind:CatalogoMaster|undefined=catalogMaster.find((ctlg)=>ctlg?.name===selectedValue)
-        if(catalogMasterFind!==undefined){
-            const newCatalog: NewCatalogPayload={
+        const catalogMasterFind: CatalogoMaster | undefined = catalogMaster.find((ctlg) => ctlg?.name === selectedValue)
+        if (catalogMasterFind !== undefined) {
+            const newCatalog: NewCatalogPayload = {
                 username: 'defaultUser',
-                role:"defaultRole",
-                idCatalog:catalogMasterFind.id.toString(),
-                nombre:formData['nombre'] as string    
+                role: "defaultRole",
+                idCatalog: catalogMasterFind.id.toString(),
+                nombre: formData['nombre'] as string
             }
             console.log(newCatalog)
             //TODO: implement send of the create to service
             // setdataLoading(true);
-            
+
         }
     }
 
@@ -232,23 +233,32 @@ const GeneralCatalog: FC = () => {
 
     }
 
-
-
     return (
-        <div className="container-fluid">
-            <h1>Select General Page</h1>
-            <div className="d-flex p-2 justify-content-center">
-                <div className="card w-100">
-                    <div className="card-body">
-                        <div className="row">
-                            <div className="col-sm-12 col-md-12 ms-3">
-                                <fieldset className="form-group">
-                                    <label>Cat&aacute;logos</label><br />
-                                </fieldset>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-sm-3">
+        <Box p={3} >
+            <Typography variant="h4" gutterBottom>
+                Select General Page
+            </Typography>
+            <Box display="flex" justifyContent="center" mb={2}>
+                <Card sx={{
+                    width: '100%',
+                    border: '1px solid #ddd',
+                    borderRadius: '4px',
+                    boxShadow: 'none'
+                }}>
+                    <CardContent>
+                        {/* Row equivalent */}
+                        <Grid container spacing={2} >
+                            <Grid size={{ xs: 12, md: 3 }}>
+                                <FormGroup>
+                                    <Typography variant="body1" component="label">
+                                        Cat&aacute;logos
+                                    </Typography><br />
+                                </FormGroup>
+                            </Grid>
+                        </Grid >
+
+                        <Grid container spacing={2}>
+                            <Grid size={{ xs: 12, sm: 3 }}>
                                 {!dataLoading && (
                                     <FormControl sx={{ m: 1, minWidth: 200 }}>
                                         <InputLabel>Catálogos</InputLabel>
@@ -261,31 +271,31 @@ const GeneralCatalog: FC = () => {
                                         </Select>
                                     </FormControl>
                                 )}
-
-                            </div>
-                            <div className="col-sm-4 d-flex align-items-center">
-                                <a style={{ cursor: 'pointer' }} className="text-center">
+                            </Grid>
+                            <Grid size={{ xs: 12, sm: 4 }} sx={{ display: 'flex', alignItems: 'center' }}>
+                                <a style={{ cursor: 'pointer' }} className="color-secondary-blue">
                                     <ModeEditIcon onClick={handleClickEditCategorieModal} style={{ marginRight: '3px' }} />
                                 </a>
+                                
                                 <span>Editar</span>
-                            </div>
-                        </div>
+                            </Grid>
+                        </Grid>
                         <hr />
-                        <div className="row">
-                            <div className="col-12 d-flex justify-content-end">
-                                <a style={{ cursor: 'pointer' }} className="text-center">
+                        <Grid container spacing={2}>
+                            <Grid size={{ xs: 12 }} sx={{ display: 'flex', justifyContent: 'end' }}>
+                                <a style={{ cursor: 'pointer' }} className="color-secondary-blue">
                                     <AddIcon sx={{ fontSize: '30px' }} onClick={handleClickAddCatalogModal} />
                                 </a>
-                            </div>
-                        </div>
+                            </Grid>
+                        </Grid>
                         <br />
-                        <div className="row">
-                            <div className="col-12 w-100 bg-primary d-flex justify-content-center text-light text-center" style={{ minHeight: '35px' }}>
+                        <Grid container spacing={2}>
+                            <Grid size={{ xs: 12 }} sx={{ width: '100%', display: 'flex', justifyContent: 'center', minHeight: '35px', textAlign: 'center' }} className="bg-secondary-blue">
                                 <span className="align-middle">{selectedValueJson.description}</span>
-                            </div>
-                        </div>
-                        <br />                        
-                        <div className="row">
+                            </Grid>
+                        </Grid>
+                        <br />
+                        <Grid container spacing={2}>
                             {catalogData.length > 0 && (
                                 <Paper sx={{ height: 400, width: '100%' }}>
                                     <DataGrid
@@ -297,19 +307,22 @@ const GeneralCatalog: FC = () => {
                                     />
                                 </Paper>
                             )}
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        </Grid>
+                    </CardContent>
+                </Card>
+            </Box>
+
             <ScreenLoader loading={dataLoading} />
+
             <EditFormModal
                 isOpen={editCategorieModalOpen}
                 onClose={() => setEditCategorieModalOpen(false)}
                 formFields={editCategorieModalFormFields}
                 editValues={selectedValueJson}
-                formTitle="Editar nombre del Catàlogo"
+                formTitle="Editar nombre del Catálogo"
                 onSubmit={handleEditCategorieModalSubmit}
             />
+
             <EditFormModal
                 isOpen={editCatalogModalOpen}
                 onClose={() => setEditCatalogModalOpen(false)}
@@ -318,6 +331,7 @@ const GeneralCatalog: FC = () => {
                 formTitle="Editar Elemento"
                 onSubmit={handleEditCatalogModalSubmit}
             />
+
             <EmptyFormModal
                 isOpen={createCatalogModalOpen}
                 onClose={() => setCreateCatalogModalOpen(false)}
@@ -325,11 +339,10 @@ const GeneralCatalog: FC = () => {
                 formTitle="Agregar Elemento"
                 onSubmit={handleCreateCatalogModalSubmit}
             />
+        </Box>
+    );
 
-
-        </div>
-
-    )
 
 }
-export default GeneralCatalog;
+
+export default GeneralCatalogM;

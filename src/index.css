@@ -4,4 +4,8 @@
 
 .bg-secondary-blue{
     background-color: var(--blue_main);
+    color: aliceblue;
+}
+.color-secondary-blue{
+    color:  var(--blue_main);
 }

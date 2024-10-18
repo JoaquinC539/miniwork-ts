@@ -6,6 +6,8 @@ import GeneralCatalog from './pages/GeneralCatalog';
 import Busqueda from './pages/Busqueda';
 import BusquedaResultados from './pages/BusquedaResultados';
 import TestGeneral from './pages/TestGeneral';
+import GeneralCatalogM from './pages/GeneralCatalogM';
+import BusquedaM from './pages/BusquedaM';
 
 export const Router = createBrowserRouter([
   {
@@ -25,8 +27,16 @@ export const Router = createBrowserRouter([
         element:<GeneralCatalog/>
       },
       {
+        path:'catalogom',
+        element:<GeneralCatalogM/>
+      },
+      {
         path:'busqueda',
         element:<Busqueda />
+      },
+      {
+        path:'busquedam',
+        element:<BusquedaM />
       },
       {
         path:'busquedaResultados',
