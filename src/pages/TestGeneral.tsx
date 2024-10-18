@@ -36,6 +36,7 @@ const TestGeneral = () => {
         },
         
     ];
+    
 
     const handleClickGeneric=()=>{
         setIsOpenGeneric(true)
@@ -55,7 +56,8 @@ const TestGeneral = () => {
             isOpen={isOpenGeneric}
             onClose={()=>setIsOpenGeneric(false)}
             modalTitle="Generic Modal Test"
-            children={<HomePage /> }/>
+            children={<HomePage /> }
+            />
         </>
     );
 }

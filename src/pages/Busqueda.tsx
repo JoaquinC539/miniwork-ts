@@ -4,7 +4,7 @@ import { ChangeEvent, FC, FormEvent, useState } from "react";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import dayjs, { Dayjs } from "dayjs";
-import { SearchFormData } from "../interfaces/pages/busqueda/FormData";
+import { SearchFormData } from "../interfaces/pages/busqueda/SearchFormData";
 import { useNavigate } from "react-router-dom";
 import ScreenLoader from "../components/loader/ScreenLoader";
 import CloseIcon from "@mui/icons-material/Close"

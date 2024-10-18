@@ -5,11 +5,12 @@ import Grid from "@mui/material/Grid2";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import dayjs, { Dayjs } from "dayjs";
-import { SearchFormData } from "../interfaces/pages/busqueda/FormData";
+// import { SearchFormData } from "../interfaces/pages/busqueda/SearchFormData";
 import { useNavigate } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close"
 import axios from "axios";
 import ScreenLoader from "../components/loader/ScreenLoader";
+import { SearchFormDataM } from "../interfaces/pages/busqueda/SearchFormDataM";
 const BusquedaM = () => {
 
     const navigate = useNavigate();
@@ -45,11 +46,11 @@ const BusquedaM = () => {
             padding: '8px',
         }
     }
-    const initialSearchValues: SearchFormData = {
-        bussinessType: "all",
-        requestStatus: "all"
+    const initialSearchValues: SearchFormDataM = {
+        status: "",
+        typeOfBusinessIs: ""
     }
-    const [searchValues, setSearchValues] = useState<SearchFormData>(initialSearchValues)
+    const [searchValues, setSearchValues] = useState<SearchFormDataM>(initialSearchValues)
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -98,7 +99,7 @@ const BusquedaM = () => {
         ))
     }
 
-    const handleDateChange = (newDate: Dayjs | null, name: keyof SearchFormData) => {
+    const handleDateChange = (newDate: Dayjs | null, name: keyof SearchFormDataM) => {
         if (newDate) {
             setSearchValues((prev) => (
                 {
@@ -170,16 +171,16 @@ const BusquedaM = () => {
                                                                 <RadioGroup
                                                                     aria-labelledby="bussinessType"
                                                                     defaultValue="all"
-                                                                    value={searchValues['bussinessType']}
-                                                                    name="bussinessType"
+                                                                    value={searchValues['typeOfBusinessIs']}
+                                                                    name="typeOfBusinessIs"
                                                                     onChange={handleChange}>
-                                                                    <FormControlLabel value="newBussiness" control={<Radio />}
+                                                                    <FormControlLabel value="NB" control={<Radio />}
                                                                         label="Nuevo Negocio" />
-                                                                    <FormControlLabel value="increase" control={<Radio />}
+                                                                    <FormControlLabel value="IN" control={<Radio />}
                                                                         label="Incremento" />
-                                                                    <FormControlLabel value="include" control={<Radio />}
+                                                                    <FormControlLabel value="IC" control={<Radio />}
                                                                         label="Inclusiones" />
-                                                                    <FormControlLabel value="all" control={<Radio />}
+                                                                    <FormControlLabel value="" control={<Radio />}
                                                                         label="Todos" />
                                                                 </RadioGroup>
                                                             </FormControl>
@@ -205,13 +206,13 @@ const BusquedaM = () => {
                                                                 <RadioGroup
                                                                     aria-labelledby="requestStatus"
                                                                     defaultValue="all"
-                                                                    value={searchValues['requestStatus']}
-                                                                    name="requestStatus"
+                                                                    value={searchValues['status']}
+                                                                    name="status"
                                                                     onChange={handleChange}
                                                                 >
-                                                                    <FormControlLabel value="pendingManual" control={<Radio />} label="Pendiente de Suscripción Manual" />
-                                                                    <FormControlLabel value="completed" control={<Radio />} label="Completado" />
-                                                                    <FormControlLabel value="all" control={<Radio />} label="Todos" />
+                                                                    <FormControlLabel value="gblbk31" control={<Radio />} label="Pendiente de Suscripción Manual" />
+                                                                    <FormControlLabel value="gblbk32" control={<Radio />} label="Completado" />
+                                                                    <FormControlLabel value="" control={<Radio />} label="Todos" />
                                                                 </RadioGroup>
                                                             </FormControl>
                                                         </Box>
@@ -248,8 +249,8 @@ const BusquedaM = () => {
                                                                         <FormControl sx={{ width: "45%" }}>
                                                                             <InputLabel>Genero</InputLabel>
                                                                             <Select
-                                                                                value={searchValues['ownerGender'] || ""}
-                                                                                name="ownerGender"
+                                                                                value={searchValues['gender'] || ""}
+                                                                                name="gender"
                                                                                 onChange={(e) => handleSelectChange(e as ChangeEvent<{ value: unknown }>, e.target.name)}>
                                                                                 <MenuItem value="male">Masculino</MenuItem>
                                                                                 <MenuItem value="female">Femenino</MenuItem>
@@ -262,10 +263,10 @@ const BusquedaM = () => {
                                                                         <TextField
                                                                             sx={inputsTextSX}
                                                                             type="text"
-                                                                            name="ownerFatherSurname"
+                                                                            name="ownerPaternalLastName"
                                                                             margin="dense"
                                                                             label="Apellido Paterno"
-                                                                            value={searchValues['ownerFatherSurname'] || ""}
+                                                                            value={searchValues['ownerPaternalLastName'] || ""}
                                                                             onChange={handleChange}
                                                                         />
                                                                     </Grid>
@@ -275,10 +276,10 @@ const BusquedaM = () => {
                                                                         <TextField
                                                                             sx={inputsTextSX}
                                                                             type="text"
-                                                                            name="ownerMotherSurname"
+                                                                            name="ownerMaternalLastName"
                                                                             margin="dense"
                                                                             label="Apellido Materno"
-                                                                            value={searchValues["ownerMotherSurname"] || ""}
+                                                                            value={searchValues["ownerMaternalLastName"] || ""}
                                                                             onChange={handleChange}
                                                                         />
                                                                     </Grid>
@@ -308,11 +309,11 @@ const BusquedaM = () => {
                                                                         <TextField
                                                                             sx={inputsTextSX}
                                                                             type="text"
-                                                                            name="assuredFatherSurname"
+                                                                            name="insuredPaternalLastName"
                                                                             margin="dense"
                                                                             label="Apellido Paterno"
                                                                             onChange={handleChange}
-                                                                            value={searchValues['assuredFatherSurname'] || ""}
+                                                                            value={searchValues["insuredPaternalLastName"] || ""}
                                                                         />
                                                                     </Grid>
                                                                 </Grid>
@@ -321,11 +322,11 @@ const BusquedaM = () => {
                                                                         <TextField
                                                                             sx={inputsTextSX}
                                                                             type="text"
-                                                                            name="assuredMotherSurname"
+                                                                            name="insuredMaternalLastName"
                                                                             margin="dense"
                                                                             label="Apellido Materno"
                                                                             onChange={handleChange}
-                                                                            value={searchValues['assuredMotherSurname'] || ""}
+                                                                            value={searchValues["insuredMaternalLastName"] || ""}
                                                                         />
                                                                     </Grid>
                                                                 </Grid>
@@ -347,11 +348,11 @@ const BusquedaM = () => {
                                                                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                                                                             <DatePicker
                                                                                 label="Fecha Inicial"
-                                                                                name="assuredStartBirthDate"
-                                                                                onChange={(newDate: Dayjs | null) => handleDateChange(newDate, 'assureStartBirthDate')}
+                                                                                name="dteOfBirthBefore"
+                                                                                onChange={(newDate: Dayjs | null) => handleDateChange(newDate, "dteOfBirthBefore")}
                                                                                 format="DD/MM/YYYY"
                                                                                 sx={inputsTextSX}
-                                                                                value={searchValues['assureStartBirthDate'] ? dayjs(searchValues['assureStartBirthDate']) : null}
+                                                                                value={searchValues["dteOfBirthBefore"] ? dayjs(searchValues["dteOfBirthBefore"]) : null}
                                                                             />
                                                                         </LocalizationProvider>
                                                                     </Grid>
@@ -362,11 +363,11 @@ const BusquedaM = () => {
                                                                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                                                                             <DatePicker
                                                                                 label="Fecha Inicial"
-                                                                                name="assuredEndBirthDate"
-                                                                                onChange={(newDate: Dayjs | null) => handleDateChange(newDate, 'assureEndBirthDate')}
+                                                                                name="dteOfBirthAfter"
+                                                                                onChange={(newDate: Dayjs | null) => handleDateChange(newDate, 'dteOfBirthAfter')}
                                                                                 format="DD/MM/YYYY"
                                                                                 sx={inputsTextSX}
-                                                                                value={searchValues["assureEndBirthDate"] ? dayjs(searchValues['assureEndBirthDate']) : null}
+                                                                                value={searchValues["dteOfBirthAfter"] ? dayjs(searchValues['dteOfBirthAfter']) : null}
                                                                             />
                                                                         </LocalizationProvider>
                                                                     </Grid>
@@ -377,11 +378,11 @@ const BusquedaM = () => {
                                                                         <TextField
                                                                             sx={{ ...inputsTextSX, width: '50%' }}
                                                                             type="text"
-                                                                            name="assuredFolio"
+                                                                            name="policyNumber"
                                                                             margin="dense"
                                                                             onChange={handleChange}
                                                                             label="Folio de Control (FDC)"
-                                                                            value={searchValues['assuredFolio'] || ""}
+                                                                            value={searchValues["policyNumber"] || ""}
                                                                         />
                                                                     </Grid>
                                                                 </Grid>
@@ -392,8 +393,8 @@ const BusquedaM = () => {
                                                                             <InputLabel>Conducto de cobro</InputLabel>
                                                                             <Select
                                                                                 label="Conducto de cobro"
-                                                                                value={searchValues['chargeMethod'] || ""}
-                                                                                name="chargeMethod"
+                                                                                value={searchValues["paymentMethod"] || ""}
+                                                                                name="paymentMethod"
                                                                                 onChange={(e) => handleSelectChange(e as ChangeEvent<{ value: unknown }>, e.target.name)}>
                                                                                 <MenuItem value="nomina">Descuento por nomina</MenuItem>
                                                                                 <MenuItem value="efectivo">Efectivo</MenuItem>
@@ -420,11 +421,11 @@ const BusquedaM = () => {
                                                                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                                                                             <DatePicker
                                                                                 label="Fecha Inicial"
-                                                                                name="requestStartDate"
-                                                                                onChange={(newDate: Dayjs | null) => handleDateChange(newDate, 'requestStartDate')}
+                                                                                name="dteOfAppBefore"
+                                                                                onChange={(newDate: Dayjs | null) => handleDateChange(newDate, 'dteOfAppBefore')}
                                                                                 format="DD/MM/YYYY"
                                                                                 sx={inputsTextSX}
-                                                                                value={searchValues['requestStartDate'] ? dayjs(searchValues['requestStartDate']) : null}
+                                                                                value={searchValues["dteOfAppBefore"] ? dayjs(searchValues['dteOfAppBefore']) : null}
                                                                             />
                                                                         </LocalizationProvider>
                                                                     </Grid>
@@ -435,11 +436,11 @@ const BusquedaM = () => {
                                                                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                                                                             <DatePicker
                                                                                 label="Fecha Inicial"
-                                                                                name="requestStartDate"
-                                                                                onChange={(newDate: Dayjs | null) => handleDateChange(newDate, 'requestStartDate')}
+                                                                                name="dteOfAppAfter"
+                                                                                onChange={(newDate: Dayjs | null) => handleDateChange(newDate, 'dteOfAppAfter')}
                                                                                 format="DD/MM/YYYY"
                                                                                 sx={inputsTextSX}
-                                                                                value={searchValues['requestStartDate'] ? dayjs(searchValues['requestStartDate']) : null}
+                                                                                value={searchValues["dteOfAppAfter"] ? dayjs(searchValues['dteOfAppAfter']) : null}
                                                                             />
                                                                         </LocalizationProvider>
                                                                     </Grid>
