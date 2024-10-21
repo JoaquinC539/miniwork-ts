@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import { Alert, Box, Card, CardContent, FormControl, FormGroup, IconButton, InputLabel, MenuItem, Paper, Select, TextField, Typography } from "@mui/material";
+import {  Box, Card, CardContent, FormControl, FormGroup,  InputLabel, MenuItem, Paper, Select, TextField, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import AddIcon from '@mui/icons-material/Add';
 import { CatalogoMaster } from "../interfaces/pages/catalogGeneral/CatalogMaster";
@@ -16,7 +16,9 @@ import EmptyFormModal from "../components/modals/EmptyFormModal";
 import { CatalogMasterUpdate } from "../interfaces/pages/catalogGeneral/CatalogMasterUpdate";
 import { NewCatalogPayload } from "../interfaces/pages/catalogGeneral/NewCatalogPayload";
 import { UpdateCatalogPayload } from "../interfaces/pages/catalogGeneral/UpdateCatalogPayload";
-import CloseIcon from "@mui/icons-material/Close"
+import { NotificationPage } from "../interfaces/messageBar/NotificationPage";
+import NotificationBar from "../components/messageBar/NotificationBar";
+
 
 const GeneralCatalogM = () => {
     const [catalogMaster, setCatalogMaster] = useState<Partial<CatalogoMaster[]>>([]);
@@ -25,19 +27,33 @@ const GeneralCatalogM = () => {
     const [catalogData, setCatalogData] = useState<CatalogData[]>([]);
     const [originalCatalogData, setOriginalCatalogData] = useState<CatalogData[]>([])
     const [selectedValueJson, setSelectedValueJson] = useState<{ [key: string]: string | number | boolean }>({});
-    const [dataUpdated,setDataUpdated]=useState<boolean>(false)
-    const [erroMasterCatalog,setErrorMasterCatalog]=useState<boolean>(false)
+    const [notifications,setNotifications]=useState<NotificationPage[]>([]);
+   
+
+    const handleCloseNotification=(index:number)=>{
+        const notUpdated=[...notifications];
+        notUpdated[index].active=false;
+        setNotifications(notUpdated);
+    }
 
     const fetchMasterCatalog = async () => {
         try {
             const res = await axios.get<CatalogoMasterResult>("/catalogoMaster.json");
             if (res.status < 400 && res.data.resultObject) {
                 setCatalogMaster(res.data.resultObject);
-            }else{
-                setErrorMasterCatalog(true);
+            } else {
+                //TODO not
+                setNotifications((prev)=>([
+                    ...prev,
+                    {
+                        active:true,
+                        message:"Error Fetching Catalog Master",
+                        type:"error"
+                    }
+                ]))
             }
         } catch (error) {
-            setErrorMasterCatalog(true)
+            
             console.error("Error fetching data", error)
         }
         finally {
@@ -154,10 +170,18 @@ const GeneralCatalogM = () => {
                 idCatalog: catalogMasterFind.id,
                 catalogMaster: catalogMasterFind
             }
+            const notification:NotificationPage={
+                active: true,
+                message: "Categoria Actualizada",
+                type: "success"
+            }
+            setNotifications((prev)=>[
+                ...prev,
+                notification
+            ])
             //TODO: Implement send of the payload to service            
             // setdataLoading(true);
             console.log(payload)
-            setDataUpdated(true);
         }
 
     }
@@ -185,7 +209,7 @@ const GeneralCatalogM = () => {
 
     }
     const handleEditCatalogModalSubmit = (formData: { [key: string]: string | number | boolean }) => {
-        const updateCatalogData: UpdateCatalogPayload={
+        const updateCatalogData: UpdateCatalogPayload = {
             role: "defaultRole",
             numPage: null,
             sizePage: null,
@@ -195,7 +219,15 @@ const GeneralCatalogM = () => {
             statusElement: formData['statusElement'] as string
         }
         console.log(updateCatalogData)
-        setDataUpdated(true);
+        const notification:NotificationPage={
+            active: true,
+            message: "Catalogo Actualizada",
+            type: "success"
+        }
+        setNotifications((prev)=>[
+            ...prev,
+            notification
+        ])
         //TODO send payload to the service
 
     }
@@ -220,9 +252,17 @@ const GeneralCatalogM = () => {
                 nombre: formData['nombre'] as string
             }
             console.log(newCatalog)
-            setDataUpdated(true);
-            //TODO: implement send of the create to service
-            // setdataLoading(true);
+            const notification:NotificationPage={
+                active: true,
+                message: "Catalogo Creado",
+                type: "success"
+            }
+            setNotifications((prev)=>[
+                ...prev,
+                notification
+            ])
+            console.log(notification)
+            
 
         }
     }
@@ -253,44 +293,8 @@ const GeneralCatalogM = () => {
 
     return (
         <Box p={3} >
-            {dataUpdated &&(
-                <Box width={'100%'} m={2}>
-                <Grid container m={2}>
-                    <Grid size={{ xs: 12 }}>
-                        <Alert variant="filled" severity="success"
-                            action={
-                                <IconButton
-                                    color="inherit"
-                                    size="small"
-                                    onClick={()=>setDataUpdated(false)}>
-                                    <CloseIcon fontSize="inherit" />
-                                </IconButton>
-                            }>
-                            Data Actualizada correctamente
-                        </Alert>
-                    </Grid>
-                </Grid>
-            </Box>
-            )}
-            {erroMasterCatalog &&(
-                <Box width={'100%'} m={2}>
-                <Grid container m={2}>
-                    <Grid size={{ xs: 12 }}>
-                        <Alert variant="filled" severity="warning"
-                            action={
-                                <IconButton
-                                    color="inherit"
-                                    size="small"
-                                    onClick={()=>setDataUpdated(false)}>
-                                    <CloseIcon fontSize="inherit" />
-                                </IconButton>
-                            }>
-                            No se pudo obtener catalogo maestro
-                        </Alert>
-                    </Grid>
-                </Grid>
-            </Box>
-            )}
+            
+            <NotificationBar notification={notifications} onClose={handleCloseNotification} />
             <Typography variant="h4" gutterBottom>
                 Select General Page
             </Typography>
@@ -332,7 +336,7 @@ const GeneralCatalogM = () => {
                                 <a style={{ cursor: 'pointer' }} className="color-secondary-blue">
                                     <ModeEditIcon onClick={handleClickEditCategorieModal} style={{ marginRight: '3px' }} />
                                 </a>
-                                
+
                                 <span>Editar</span>
                             </Grid>
                         </Grid>
@@ -360,6 +364,18 @@ const GeneralCatalogM = () => {
                                         initialState={{ pagination: { paginationModel } }}
                                         pageSizeOptions={[10, 25, 50, 100]}
                                         columnHeaderHeight={80}
+                                        localeText={{
+                                            columnMenuSortAsc: "Ordenar Ascendente",
+                                            columnMenuSortDesc: 'Ordenar Descendente',                                              
+                                            columnMenuFilter: 'Filtrar', 
+                                            columnMenuHideColumn: 'Ocultar Columna',    
+                                            columnMenuShowColumns: 'Mostrar Columnas', 
+                                            toolbarColumns: 'Gestión de Columnas',
+                                            columnMenuManageColumns:"Gestionar Columnas",
+                                            MuiTablePagination: {
+                                                labelRowsPerPage: 'Filas por Pagina'
+                                            }
+                                        }}
                                     />
                                 </Paper>
                             )}

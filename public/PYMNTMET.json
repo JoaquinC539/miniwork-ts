@@ -1,0 +1,44 @@
+[
+    {
+        "strCode": "CC",
+        "strValue": "CC",
+        "strDesc": "Tarjeta De Crédito",
+        "gblbk": false,
+        "fields": null
+    },
+    {
+        "strCode": "DIR",
+        "strValue": "DIR",
+        "strDesc": "Directo",
+        "gblbk": false,
+        "fields": null
+    },
+    {
+        "strCode": "DPN",
+        "strValue": "DPN",
+        "strDesc": "Descto.Por Nomina",
+        "gblbk": false,
+        "fields": null
+    },
+    {
+        "strCode": "EF",
+        "strValue": "EF",
+        "strDesc": "Efectivo",
+        "gblbk": false,
+        "fields": null
+    },
+    {
+        "strCode": "PD",
+        "strValue": "PD",
+        "strDesc": "Descuento por N¢mina",
+        "gblbk": false,
+        "fields": null
+    },
+    {
+        "strCode": "TC",
+        "strValue": "TC",
+        "strDesc": "Tarjeta Credito",
+        "gblbk": false,
+        "fields": null
+    }
+]

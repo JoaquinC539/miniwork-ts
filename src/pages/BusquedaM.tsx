@@ -1,21 +1,45 @@
-import { Alert, Box, Button, Card, CardContent, FormControl, FormControlLabel, FormGroup, IconButton, InputLabel, MenuItem, Radio, RadioGroup, Select, SxProps, TextField, Typography } from "@mui/material";
-import { ChangeEvent, FormEvent, useState } from "react";
-// import { AdapterDateFns} from '@mui/x-date-pickers/AdapterDateFns'
+import {  Box, Button, Card, CardContent, FormControl, FormControlLabel, FormGroup,  InputLabel, MenuItem, Radio, RadioGroup, Select, SxProps, TextField, Typography } from "@mui/material";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import Grid from "@mui/material/Grid2";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import dayjs, { Dayjs } from "dayjs";
-// import { SearchFormData } from "../interfaces/pages/busqueda/SearchFormData";
 import { useNavigate } from "react-router-dom";
-import CloseIcon from "@mui/icons-material/Close"
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import ScreenLoader from "../components/loader/ScreenLoader";
 import { SearchFormDataM } from "../interfaces/pages/busqueda/SearchFormDataM";
+import { PYMNTMET } from "../interfaces/pages/busqueda/PYMNTMET";
+import { NotificationPage } from "../interfaces/messageBar/NotificationPage";
+import ErrorNotification from "../components/messageBar/NotificationBar";
 const BusquedaM = () => {
 
     const navigate = useNavigate();
     const [dataLoading, setDataLoading] = useState<boolean>(false);
-    const [searchDataOk, setSearchDataOk] = useState<boolean>(true);
+    const [notifucations,setNotifications]=useState<NotificationPage[]>([]);
+    const [payment,setPayment]=useState<PYMNTMET[]>([]);
+
+    const handleCloseNotification=(index:number)=>{
+        const notUpdated=[...notifucations];
+        notUpdated[index].active=false;
+        setNotifications(notUpdated)
+    }
+
+    useEffect(()=>{
+        axios.get<PYMNTMET[]>("/PYMNTMET.json")
+        .then((data:AxiosResponse<PYMNTMET[]>)=>{
+            setPayment(data.data);                        
+                     
+        })        
+        .catch((e)=>{
+            console.error(e);
+            const err:NotificationPage={
+                active:true,
+                message:"Error Fetching Payment methods",
+                type:"error"
+            }
+            setNotifications((prev)=>([...prev,err]));
+        })
+    },[])
 
     const cleanButtonSX: SxProps = {
         border: 1,
@@ -58,15 +82,23 @@ const BusquedaM = () => {
         setDataLoading(true)
         try {
             const res = await axios.get("/bandejaE.json")
-            // let data = res.data
-            // data = [];
-            const data = res.data
+            let data = res.data
+            data = [];
+            // const data = res.data
 
             if (data && data.length > 0) {
                 navigate("/busquedaresultados", { state: { searchResults: data } });
             } else {
                 // navigate("/busquedaresultados", { state: { searchResults: [] } });
-                setSearchDataOk(false);
+                // setSearchDataOk(false);
+                setNotifications((prev)=>([
+                    ...prev,
+                    {
+                        active:true,
+                        message:"No Results",
+                        type:"info"
+                    }
+                ]))
             }
         } catch (error) {
             console.error("Error fetching search results:", error);
@@ -110,32 +142,15 @@ const BusquedaM = () => {
         }
     }
 
-    const handleCloseSearchDataOk = () => {
-        setSearchDataOk(true);
-    }
+    // const handleCloseSearchDataOk = () => {
+    //     setSearchDataOk(true);
+    // }
 
     return (
         <Box p={3}>
-            <Box display={'flex'} justifyContent={'center'} flexDirection={'column'} p={2}>
-                {!searchDataOk && (
-                    <Box width={'100%'} m={2}>
-                        <Grid container m={2}>
-                            <Grid size={{ xs: 12 }}>
-                                <Alert variant="filled" severity="info"
-                                    action={
-                                        <IconButton
-                                            color="inherit"
-                                            size="small"
-                                            onClick={handleCloseSearchDataOk}>
-                                            <CloseIcon fontSize="inherit" />
-                                        </IconButton>
-                                    }>
-                                    No results
-                                </Alert>
-                            </Grid>
-                        </Grid>
-                    </Box>
-                )}
+            <Box display={'flex'} justifyContent={'center'} flexDirection={'column'} p={2}>               
+                <ErrorNotification notification={notifucations} onClose={handleCloseNotification} />
+
                 <Card sx={generalCardSX}>
                     <form onSubmit={handleSubmit}>
                         <CardContent >
@@ -396,9 +411,12 @@ const BusquedaM = () => {
                                                                                 value={searchValues["paymentMethod"] || ""}
                                                                                 name="paymentMethod"
                                                                                 onChange={(e) => handleSelectChange(e as ChangeEvent<{ value: unknown }>, e.target.name)}>
-                                                                                <MenuItem value="nomina">Descuento por nomina</MenuItem>
+                                                                                {/* <MenuItem value="nomina">Descuento por nomina</MenuItem>
                                                                                 <MenuItem value="efectivo">Efectivo</MenuItem>
-                                                                                <MenuItem value="tarjetaC">Tarjeta de Credito</MenuItem>
+                                                                                <MenuItem value="tarjetaC">Tarjeta de Credito</MenuItem> */}
+                                                                                {payment.map((pay)=>(
+                                                                                    <MenuItem key={pay.strCode} value={pay.strDesc}>{pay.strDesc}</MenuItem>
+                                                                                ))}
                                                                             </Select>
                                                                         </FormControl>
                                                                     </Grid>
